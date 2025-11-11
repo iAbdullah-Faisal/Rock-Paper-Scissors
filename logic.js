@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
   let choices = Math.random();
   choices = choices * 3 + 1;
@@ -25,9 +28,6 @@ function getHumanChoice() {
   }
 }
 
-let humanScore = 0;
-let computerScore = 0;
-
 function playRound(humanChoice, computerChoice) {
   if (humanChoice === computerChoice) {
     alert("It's a tie!");
@@ -44,7 +44,26 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame() {
+  for (let i = 0; i < 5; i++) {
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+    alert(`Scores - You: ${humanScore}, Computer: ${computerScore}`);
+  }
+  alert(
+    "Game Over! Final Score - You: " +
+      humanScore +
+      ", Computer: " +
+      computerScore
+  );
+  if (humanScore > computerScore) {
+    alert("Congratulations! You won the game!");
+  } else if (computerScore > humanScore) {
+    alert("Sorry! The computer won the game! Learn how to play better, human!");
+  } else {
+    alert("It's a tie game!");
+  }
+}
 
-playRound(humanSelection, computerSelection);
+playGame();
