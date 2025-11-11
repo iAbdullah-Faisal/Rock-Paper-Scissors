@@ -11,3 +11,5 @@ Note: I slept earlier cuz I had class 9AM hahahah
 11:33am The Logic of the computer choices is done inside logic.js. I tested it functionality to ensure the accuracy of its outputs.
 
 11:46am The Logic of the Human choices is done, and also were tested to check its functionality.
+
+12:04pm The logic of the rounds is done, and were tested to check its functionality.

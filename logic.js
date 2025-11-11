@@ -25,4 +25,26 @@ function getHumanChoice() {
   }
 }
 
-getHumanChoice(); // Example usage
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice === computerChoice) {
+    alert("It's a tie!");
+  } else if (
+    (humanChoice === "rock" && computerChoice === "scissors") ||
+    (humanChoice === "paper" && computerChoice === "rock") ||
+    (humanChoice === "scissors" && computerChoice === "paper")
+  ) {
+    humanScore++;
+    alert(`You win! ${humanChoice} beats ${computerChoice}.`);
+  } else {
+    computerScore++;
+    alert(`You lose! ${computerChoice} beats ${humanChoice}.`);
+  }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
